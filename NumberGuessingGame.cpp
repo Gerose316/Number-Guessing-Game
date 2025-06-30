@@ -1,6 +1,18 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <fstream>
+void saveScore(const std::string hardstat, int attempts){\
+    std::ofstream file("highscores.csv", std::ios::app);
+    if(file.is_open()){
+        file << hardstat << "," << attempts << "\n";
+        file.close();
+    } else {
+        std::cout << " error found" << std::endl;
+    }
+}
+
+
 
 int Easy(){
     std::cout << "Great! You have selected the Easy difficulty level." << std::endl;
@@ -22,6 +34,7 @@ int Easy(){
          
         }else{
             std::cout << "Congratulations! You guessed the correct number in " << count << " attempts." << std::endl;
+            saveScore("Easy", count);
             return count;
 
         }
@@ -62,6 +75,7 @@ int Medium(){
 
         }else{
             std::cout << "Congratulations! You guessed the correct number in " << count << " attempts." << std::endl;
+            saveScore("Medium", count);
             return count;
 
         }
@@ -92,6 +106,7 @@ int Hard(){
          
         }else{
             std::cout << "Congratulations! You guessed the correct number in " << count << " attempts." << std::endl;
+            saveScore("Hard", count);
             return count;
 
         }
@@ -112,9 +127,7 @@ int Hard(){
 
 // I need to learn or watch a video for this 
 
-void saveScore(){
 
-}
 
 
 
