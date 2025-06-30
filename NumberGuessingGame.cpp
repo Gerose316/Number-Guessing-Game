@@ -20,19 +20,19 @@ int Easy(){
         }else if(randomNum < guessChamber){
             std::cout << "Incorrect! The number is less than" << guessChamber << std::endl;
          
-        }else if(randomNum == guessChamber){
-            std::cout << "Congratulations! You guessed the correct number in" << count << "attempts." << std::endl;
-            break;
+        }else{
+            std::cout << "Congratulations! You guessed the correct number in " << count << " attempts." << std::endl;
+            return count;
 
         }
 
-        }else if( count == 10){
-            std::cout << "the end" << std::endl;
-            break;
-        }
+        
         
     }
-    
+}
+ std::cout << "Game over! nice try " << randomNum << "." << std::endl;
+    return -1;
+
 
 }
 
@@ -49,23 +49,27 @@ int Medium(){
         count++;
         if( count < 5){
         if(randomNum > guessChamber){
-            std::cout << "Incorrect! The number is greater than" << guessChamber << std::endl;
+            std::cout << "Incorrect! The number is greater than " << guessChamber << std::endl;
             
         }else if(randomNum < guessChamber){
-            std::cout << "Incorrect! The number is less than" << guessChamber << std::endl;
+            std::cout << "Incorrect! The number is less than " << guessChamber << std::endl;
          
         }else if(randomNum == guessChamber){
-            std::cout << "Congratulations! You guessed the correct number in" << count << "attempts." << std::endl;
+            std::cout << "Congratulations! You guessed the correct number in " << count << "attempts." << std::endl;
             break;
 
         }
 
-        }else if( count == 5){
-            std::cout << "the end" << std::endl;
-            break;
+        }else{
+            std::cout << "Congratulations! You guessed the correct number in " << count << " attempts." << std::endl;
+            return count;
+
         }
         
     }
+     std::cout << "Game over! nice try " << randomNum << "." << std::endl;
+    return -1;
+
 }
 
 int Hard(){
@@ -86,29 +90,31 @@ int Hard(){
         }else if(randomNum < guessChamber){
             std::cout << "Incorrect! The number is less than" << guessChamber << std::endl;
          
-        }else if(randomNum == guessChamber){
-            std::cout << "Congratulations! You guessed the correct number in" << count << "attempts." << std::endl;
-            break;
+        }else{
+            std::cout << "Congratulations! You guessed the correct number in " << count << " attempts." << std::endl;
+            return count;
 
         }
 
-        }else if( count == 3){
-            std::cout << "the end" << std::endl;
-            break;
-        }
+      
         
-        
+    }  
     }
+    std::cout << "Game over! nice try " << randomNum << "." << std::endl;
+    return -1;
+
 
  
 }
 
 
 // NEEDS TO BE CSV FILE TRACKING ALL THE HIGHSCORES
-void highScore(int score){
+
+// I need to learn or watch a video for this 
+
+void saveScore(){
 
 }
-// I need to learn or watch a video for this 
 
 
 
@@ -145,15 +151,5 @@ int main(){
         }
 
     }
-
-    highScore(attempts);
-
-
-
-
-    
-
-
-
 
 }
